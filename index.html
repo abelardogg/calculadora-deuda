@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+    </style>
+</head>
+<body>
+    
+    <div>
+        
+
+        <form onsubmit="return 0">
+            
+            <div>
+                <p>Deuda privada</p>
+
+                <label for="creditos-hipotecario">Créditos hipotecarios</label>
+                <input type="number" name="creditos-hipotecario" id="creditos-hipotecario">
+<br>
+<br>
+                <label for="avales-terceros">Avales a terceros</label>
+                <input type="number" name="avales-terceros" id="avales-terceros">
+<br>
+<br>
+                <label for="creditos-consumoo">Créditos al consumo</label>
+                <input type="number" name="creditos-consumoo" id="creditos-consumoo">
+                
+                <br>
+                <p>Deudas derivadas del ejercicio profesional de</p>
+                <br>
+
+                <label for="autonomos-empresarios">Autónomos y Empresarios</label>
+                <input type="number" name="autonomos-empresarios" id="autonomos-empresarios">
+
+                <hr>
+
+                <p>Deuda pública </p>
+
+                <label for="hacienda">Hacienda </label>
+                <input type="number" name="hacienda" id="hacienda">
+<br><br>
+                <label for="seguridad-social">Seguridad Social</label>
+                <input type="number" name="seguridad-social" id="seguridad-social">
+<br><br>
+                <label for="otros">Otros </label>
+                <input type="number" name="otros" id="otros">
+            </div>
+        </form>
+<hr>
+<hr>
+        <div id="calculation-display">
+            <div>
+                <p>Tu deuda es de</p>
+                <span><input id="current-debt" value="0" type="number" readonly/>€</span>
+
+                <p>Podrás cancelar deuda hasta</p>
+                <span><input id="cancel-debt" value="0" readonly>€</span>
+
+                <p>% de deuda recuperada</p>
+                <span><input id="recover-debt" value="0" readonly>€</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./form.js"></script>
+    <script src="./index.js"></script>
+
+
+</body>
+</html>

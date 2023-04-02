@@ -15,6 +15,8 @@ const DebtCalculator = function () {
             const currentDebtDisplay = document.getElementById('current-debt');
             const cancelDebtDisplay = document.getElementById('cancel-debt');
             const recoverDebtDisplay = document.getElementById('recover-debt');
+            const possibleCancelPrivDisplay = document.getElementById('possible-cancel-priv');
+            const possibleCancelPublicDisplay = document.getElementById('possible-cancel-public');
 
             const credHipInput = document.getElementById('creditos-hipotecario');
             const avalInput = document.getElementById('avales-terceros');
@@ -25,7 +27,7 @@ const DebtCalculator = function () {
             const ssInput = document.getElementById('seguridad-social');
             const otrosInput = document.getElementById('otros');
 
-            let haciendaVirtualValue = 0;
+          
 
             const allFields = [credHipInput, avalInput, credConsInput, autonomEmpresInput, haciendaInput, ssInput, otrosInput];
 
@@ -56,9 +58,10 @@ const DebtCalculator = function () {
 
                     currentDebtDisplay.value = self.currentDebt;
                     cancelDebtDisplay.value = self.cancelDebt
+                    recoverDebtDisplay.value = Math.round((cancelDebtDisplay.value / currentDebtDisplay.value) * 100);
 
-                    recoverDebtDisplay.value = Math.round((cancelDebtDisplay.value / currentDebtDisplay.value) * 100)
-                    
+                    possibleCancelPrivDisplay.value = Number(!!credHipInput.value ? credHipInput.value : 0)  + Number(!!avalInput.value ? avalInput.value : 0) + Number(!!credConsInput.value ? credConsInput.value : 0) + Number(!!autonomEmpresInput.value ? autonomEmpresInput.value : 0);
+                    possibleCancelPublicDisplay.value = Number(!!self.haciendaVirtualValue ? self.haciendaVirtualValue : 0)  + Number(!!ssInput.value ? ssInput.value : 0) ; 
                 });
             });
 

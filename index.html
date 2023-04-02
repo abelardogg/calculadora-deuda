@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,45 +8,53 @@
     <title>Form</title>
     <style>
         /* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     </style>
 </head>
+
 <body>
-    
+
     <div>
-        
+
 
         <form onsubmit="return 0">
-            
+
             <div>
                 <p>Deuda privada</p>
 
                 <label for="creditos-hipotecario">Créditos hipotecarios</label>
                 <input type="number" name="creditos-hipotecario" id="creditos-hipotecario">
-<br>
-<br>
+                <br>
+                <br>
                 <label for="avales-terceros">Avales a terceros</label>
                 <input type="number" name="avales-terceros" id="avales-terceros">
-<br>
-<br>
+                <br>
+                <br>
                 <label for="creditos-consumoo">Créditos al consumo</label>
                 <input type="number" name="creditos-consumoo" id="creditos-consumoo">
-                
+
                 <br>
                 <p>Deudas derivadas del ejercicio profesional de</p>
                 <br>
 
                 <label for="autonomos-empresarios">Autónomos y Empresarios</label>
                 <input type="number" name="autonomos-empresarios" id="autonomos-empresarios">
+                <br>
+                <br>
+                <div>
+                    <label for="possible-cancel-priv">Cancelación posible de deuda privada</label>
+                    <input type="number" name="possible-cancel-priv" id="possible-cancel-priv" value="0" readonly>
+                </div>
+
 
                 <hr>
 
@@ -53,20 +62,30 @@ input[type=number] {
 
                 <label for="hacienda">Hacienda </label>
                 <input type="number" name="hacienda" id="hacienda">
-<br><br>
+                <br><br>
                 <label for="seguridad-social">Seguridad Social</label>
                 <input type="number" name="seguridad-social" id="seguridad-social">
-<br><br>
+                <br><br>
                 <label for="otros">Otros </label>
                 <input type="number" name="otros" id="otros">
+
+                <br>
+                <br>
+                <div>
+                    <label for="possible-cancel-public">Cancelación posible de deuda pública</label>
+                    <input type="number" name="possible-cancel-public" id="possible-cancel-public" value="0" readonly>
+                </div>
+
+
+
             </div>
         </form>
-<hr>
-<hr>
+        <hr>
+        <hr>
         <div id="calculation-display">
             <div>
                 <p>Tu deuda es de</p>
-                <span><input id="current-debt" value="0" type="number" readonly/>€</span>
+                <span><input id="current-debt" value="0" type="number" readonly />€</span>
 
                 <p>Podrás cancelar deuda hasta</p>
                 <span><input id="cancel-debt" value="0" readonly>€</span>
@@ -83,4 +102,5 @@ input[type=number] {
 
 
 </body>
+
 </html>
